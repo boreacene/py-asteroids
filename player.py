@@ -1,3 +1,4 @@
+import sys
 import pygame
 from circleshape import CircleShape
 from constants import PLAYER_RADIUS, PLAYER_SPEED, PLAYER_TURN_SPEED
@@ -34,6 +35,10 @@ class Player(CircleShape):
             self.move(dt)
         if keys[pygame.K_s]:
             self.move(-dt)
+
+        if keys[pygame.K_TAB]:
+            print("Exiting Game!")
+            sys.exit(0)
 
     def move(self, dt):
         #                        v-- this is the unit vector
